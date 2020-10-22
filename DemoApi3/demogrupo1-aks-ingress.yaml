@@ -1,0 +1,17 @@
+﻿apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: demogrupo1-aks-ingress
+  namespace: demogrupo1-aks-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:  
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: employees
+          servicePort: 80
+        path: /pod/(.*)
