@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: employees
-        image: demogrupo1cr.azurecr.io/employeesapi:25
+        image: demogrupo1cr.azurecr.io/employees:latest
         ports:
         - containerPort: 80
         - containerPort: 5000
